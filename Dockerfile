@@ -1,9 +1,10 @@
-FROM gcr.io/broad-getzlab-workflows/base_image:v0.0.5
+#FROM gcr.io/broad-getzlab-workflows/base_image:v0.0.5
+RUN apt-get update && apt-get install -y python2.7.6
 
 WORKDIR /build
 
 # install dependencies
-RUN pip install sortedcontainers
+# RUN pip install sortedcontainers
 ARG cache_invalidate=10
 
 
