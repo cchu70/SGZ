@@ -14,7 +14,6 @@ setup(
         'numpy',
         'scipy',
         'tqdm',
-        'backports.functools-lru-cache',
         'setuptools'
     ]
 )
