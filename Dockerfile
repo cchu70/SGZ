@@ -21,3 +21,5 @@ RUN pip uninstall -y pip
 
 # install SGZ
 COPY fmiSGZ.py ./fmiSGZ.py
+COPY convert_ascat2sgz.py ./convert_ascat2sgz.py
+COPY format_maf2sgz.py ./format_maf2sgz.py
