@@ -33,7 +33,7 @@ def parse_args():
 def main():
     args = parse_args()
     
-    new_maf_fn = convert_seg_to_sgz(
+    new_maf_fn = format_hapaseg_tonly_merged_maf2sgz(
         sample_id=args.sample_id, 
         maf_fn=args.hapaseg_tonly_merged_maf, 
     )
