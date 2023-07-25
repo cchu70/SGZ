@@ -14,7 +14,7 @@ def format_hapaseg_tonly_merged_maf2sgz(sample_id, maf_fn):
     new_maf_df['frequency'] = maf_df['t_alt_count'] / new_maf_df['depth']
     new_maf_df['pos'] = 'chr' + maf_df['Chromosome'].astype(str) + ':' + maf_df['Start_position'].astype(str)
     
-    new_maf_fn = f'{sample_id}.hapaseg_tonly_merged_maf2sgz.tsv'
+    new_maf_fn = '{}.hapaseg_tonly_merged_maf2sgz.tsv'.format(sample_id)
     new_maf_df.to_csv(new_maf_fn, sep='\t', index=None)
     return new_maf_fn
     
