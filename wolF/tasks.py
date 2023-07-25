@@ -1,6 +1,6 @@
 import wolf
 
-sgz_docker = 'gcr.io/broad-getzlab-workflows/sgz:v20'
+sgz_docker = 'gcr.io/broad-getzlab-workflows/sgz:v21'
 
 class sgz(wolf.Task):
     

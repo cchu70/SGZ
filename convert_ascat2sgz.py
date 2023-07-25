@@ -67,9 +67,9 @@ def parse_args():
                         help='Path to segmentation from ASCAT (non-raw)')
     parser.add_argument('--tumor_log_r', type=str,
                         help='Path to tumor LogR file')
-    parser.add_argument('--tumor_baf', type=float,
+    parser.add_argument('--tumor_baf', type=str,
                         help='Path to tumor BAF file')
-    parser.add_argument('--ascat_qc', type=float,
+    parser.add_argument('--ascat_qc', type=str,
                         help='Path to ASCAT qc file with purity information')
     
     return parser.parse_args()
