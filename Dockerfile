@@ -12,3 +12,6 @@ ENV PATH=$PATH:/app
 
 # install SGZ
 COPY fmiSGZ.py ./fmiSGZ.py
+
+COPY setup.py .
+RUN pip install .
