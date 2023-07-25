@@ -81,8 +81,8 @@ def main():
     seg_df = pd.read_csv(args.ascat_segments, sep='\t')
     
     ascat_segments_df = pd.read_csv(args.ascat_segments, sep='\t'), 
-    tumor_LogR_df = pd.read_csv(args.tumor_LogR, sep='\t'), 
-    tumor_BAF_df = pd.read_csv(args.tumor_BAF, sep='\t'), 
+    tumor_LogR_df = pd.read_csv(args.tumor_log_r, sep='\t'), 
+    tumor_BAF_df = pd.read_csv(args.tumor_baf, sep='\t'), 
     ascat_qc_df = pd.read_csv(args.ascat_qc, sep=' '), 
     
     sgz_seg_df = convert_seg_to_sgz(
