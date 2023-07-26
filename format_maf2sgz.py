@@ -8,7 +8,7 @@ import sys
 def format_hapaseg_tonly_merged_maf2sgz(sample_id, maf_fn):
     maf_df = pd.read_csv(maf_fn, sep='\t')
     new_maf_df = pd.DataFrame(index=maf_df.index, columns=['#sample', 'mutation', 'frequency', 'depth', 'pos', 'status', 'strand', 'effect'])
-    new_maf_df['#sample'] = pair_id
+    new_maf_df['#sample'] = sample_id
     new_maf_df['mutation'] = maf_df['Chromosome'].astype(str) + ':' + maf_df['Start_position'].astype(str) + ':' + maf_df['putative_somatic'].astype(str)
     new_maf_df['depth'] = maf_df['t_ref_count'] + maf_df['t_alt_count']
     new_maf_df['frequency'] = maf_df['t_alt_count'] / new_maf_df['depth']
