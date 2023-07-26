@@ -10,14 +10,15 @@ class sgz(wolf.Task):
         'mut_txt': None,
     }
     
-    script = "python /app/fmiSGZ.py ${mut_txt} ${cna_txt} -o ${sample_id}.sgz.mut.txt"
+    script = "python /app/fmiSGZ.py ${mut_txt} ${cna_txt} -o ${sample_id}"
     
     output_patterns = {
-        "sgz_mut_txt": "*.sgz.mut.txt"
+        "sgz_mut_txt": "*.fmi.sgz.full.txt"
     }
     
     docker = sgz_docker
     resources = {"cpus-per-task": 4, "mem" : "8G"}
+    
 
 class ascat2sgz_seg(wolf.Task):
     inputs = {
@@ -33,7 +34,7 @@ class ascat2sgz_seg(wolf.Task):
             --sample_id ${sample_id} \
             --ascat_segments ${ascat_segments}  \
             --tumor_log_r ${tumor_log_r}  \
-            --tumor_baf ${tumor_log_r} \
+            --tumor_baf ${tumor_baf} \
             --ascat_qc ${ascat_qc} 
     """
     

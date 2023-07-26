@@ -6,6 +6,7 @@ from scipy.stats import binom_test
 from scipy.stats import binom
 import argparse
 import logging
+import tqdm
 
 __author__ = 'James Sun'
 __contact__ = 'jsun@foundationmedicine.com'
@@ -25,7 +26,7 @@ def core_SGZ(data_CNA, short_variants):
    
    y      = []
    
-   for sv in short_variants:
+   for sv in tqdm.tqdm(short_variants):
       if sv.chr_.upper() in ['X', 'Y']:
          continue
 
