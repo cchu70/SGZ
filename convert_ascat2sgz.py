@@ -23,7 +23,7 @@ def convert_seg_to_sgz(seg_df, tumor_log_r, tumor_baf, ascat_qc):
     sgz_seg_df['purity'] = purity
     sgz_seg_df['baseLevel'] = (purity * ploidy) + (2 * (1-purity))
     
-    sgz_seg_df['mafPred'] = ((purity * sgz_seg_df['nMinor']) + (1 - purity)) / (sgz_seg_df['CN'] * purity + 2 * (1 - purity)) #? expected vaf of germline het given purity and ploidy?
+    sgz_seg_df['mafPred'] = ((purity * sgz_seg_df['nMinor']) + (1 - purity)) / (sgz_seg_df['CN'] * purity + 2 * (1 - purity)) if sgz_seg_df['CN'] > 0 else 'NA' #? expected vaf of germline het given purity and ploidy?
     
     sgz_seg_df = sgz_seg_df.rename(columns={'chr': 'CHR', 'startpos': 'segStart', 'endpos': 'segEnd', 'nMinor': 'numMAtumorPred'})
     
