@@ -26,7 +26,7 @@ def workflow(
     workspace=None,
     entity_type=None,
     entity_name=None,
-    docker='gcr.io/broad-getzlab-workflows/sgz:v27',
+    docker='gcr.io/broad-getzlab-workflows/sgz:v29',
     sync_prefix=""
 ):
     ascat2sgz_seg_results = ascat2sgz_seg(
